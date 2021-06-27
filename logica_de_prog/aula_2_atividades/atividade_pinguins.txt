@@ -1,0 +1,27 @@
+BASEADO NO JOGO PINGUINS NUMA FRIA
+
+Inicio do Jogo
+
+Mover o pinguim filhote azul para o gelo
+Mover o pinguim adulto azul para o gelo
+Mover o gelo para o outro lado
+Tirar o pinguim adulto azul do gelo
+Mover o gelo para o outro lado
+Mover o pinguim filhote verde para o gelo
+Mover o gelo para o outro lado
+Tirar o pinguim filhote azul do gelo
+Mover o gelo para o outro lado
+Mover o pinguim adulto verde para o gelo
+Mover o gelo para o outro lado
+Tirar o pinguim adulto verde do gelo
+Mover o gelo para o outro lado
+Mover o pinguim filhote vermelho para o gelo
+Mover o gelo para o outro lado
+Tirar o pinguim filhote verde do gelo
+Mover o gelo para o outro lado
+Mover o pinguim adulto vermelho para o gelo
+Mover o gelo para o outro lado
+Tirar o pinguim adulto vermelho do gelo
+Tirar o pinguim filhote vermelho do gelo
+
+Fim do Jogo

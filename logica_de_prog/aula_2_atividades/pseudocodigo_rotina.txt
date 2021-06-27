@@ -1,0 +1,50 @@
+Inicio
+
+Acordar
+Abrir os olhos
+Pegar a calça
+Vestir a calça
+Se destapar
+Mover os pés para fora da cama
+Levantar
+Ir até a cozinha
+Abrir a geladeira
+Pegar tomate
+Pegar alface
+Pegar rúcula
+Pegar cenoura
+Ir até a mesa
+Colocar tomate, alface, rúcula e cenoura na mesa
+Pegar cenoura
+Ir até a pia
+Abrir segunda gaveta
+Pegar ralador
+Pegar descascador
+Fechar gaveta
+Largar descascador e ralador na pia
+Pegar descascador
+Tirar as cascas da cenoura utilizando a lâmina do descascador
+Colocar descascador na pia
+Colocar cenoura na pia
+Pegar cascas da cenoura
+Ir ao lixo
+Abrir o lixo
+Jogar cascas da cenoura no lixo
+Fechar o lixo
+Pegar cenoura
+Pegar ralador
+Esfregar cenoura na parte furada do ralador até ela estar no toco verde
+Largar ralador
+Ir ao lixo
+Abrir o lixo
+Jogar toco verde no lixo
+Fechar o lixo
+Ir ao balcão
+Abrir porta
+Pegar prato
+Fechar porta
+Ir a pia
+Pegar cenoura ralada
+Colocar cenoura ralada dentro do prato
+Ir a mesa
+Colocar prato na mesa
