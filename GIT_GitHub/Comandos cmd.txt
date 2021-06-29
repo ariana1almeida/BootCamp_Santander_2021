@@ -1,0 +1,16 @@
+dir - lista (se situar no sistema operacional, mostra os diretórios)
+cd - é feito para navegar num local especifico no sistema (cd /, cd Windows)
+cd .. - volta atrás nos caminhos
+cls - limpa a tela
+mv - mover
+
+dar tab completa as frases ou comandos
+
+mkdir (nome da pasta) - cria uma pasta no diretório
+echo hello> hello.txt - cria um arquivo dentro da pasta
+del (nome do arquivo) - deleta o arquivo, se botar o nome da pasta, deleta tudo na pasta
+rmdir (nome da pasta)(/s/q) - deleta pasta
+/S: Remove todas as pastas e arquivos da pasta especificada, além dela mesma. Utilizado para remover uma árvore de pastas.
+/Q: Modo silencioso. Não pede confirmação para remover a árvore de pastas ao se passar o parâmetro /S.
+
+nome_comando /? - pesquisa o significado do comando
