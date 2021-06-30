@@ -1,0 +1,9 @@
+# Pilhas
+
+Estrutura de dados que serve como uma coleção de elementos, e permite o acesso a somente um item de dados armazenados, ou seja, tem acesso restrito, ele só pode ser lido e removido um de cada vez. Também chamadas de stacks.
+
+#### Tipos de Pilhas:
+
+- LIFO OU UEPS - o primeiro elemento a ser retirado é o último a ter sido inserido.
+- FIFO OU PEPS - o primeiro elemento a ser retirado é o primeiro que tiver sido inserido.
+

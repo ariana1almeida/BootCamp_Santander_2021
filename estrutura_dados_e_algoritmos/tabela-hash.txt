@@ -1,0 +1,21 @@
+# Tabela Hash
+
+Tabela de espalhamento ou dispersão, é uma estrutura de dados especial, que associa chaves de pesquisa a valores. Ela utiliza uma função chamada Hashing para espalhar elementos, fazendo com que os mesmos fiquem de forma não ordenada dentro do "array" que define a tabela.
+
+
+
+#### Valores:
+
+É a posição ou índice onde o elemento se encontra
+
+#### Chave:
+
+Parte da informação que compõe o elemento a ser manipulado.
+
+
+
+Espalhar os dados facilita a busca, pois a partir da chave é possível acessar a posição do "array".
+
+
+
+Um exemplo seria um jogo onde você precisa procurar um item, que pode ser um cordão, uma chave ou um bilhete, e cada um oferece uma quantidade de xp. Conforme o que você pegou, o sistema vai reconhecer e pelo nome do item pego, ele vai associar a pontuação que será dada a você.

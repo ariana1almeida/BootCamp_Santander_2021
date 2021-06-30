@@ -1,0 +1,22 @@
+# Vetores e Matrizes 
+
+Também conhecidos como Arrays, são estruturas de dados simples para auxiliar quando houver muitas variáveis do mesmo tipo em um algoritmo.
+
+#### Vetores:
+
+inteiro números[] = {39, 45, 54, 55}
+
+o índice começa do 0, ou seja, o numero 39 se refere ao [0], o numero 45 se refere ao [1], o numero 54 se refere ao[2], e o número 55 se refere ao [3].
+
+
+
+#### Matriz:
+
+Também conhecida como array multi-dimensional, é um vetor de vetores, é um vetor que possui duas ou mais dimensões.
+
+linha - linhas verticais
+
+colunas - linhas horizontais
+
+[L]*[C]
+

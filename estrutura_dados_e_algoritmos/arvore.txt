@@ -1,0 +1,3 @@
+# Árvore
+
+É uma estrutura de dados que organiza seus elementos de forma hierárquica. Existe um elemento que fica no topo da árvore, chamado de raiz, e existem os elementos subordinados a ele, chamados de nós ou folhas.

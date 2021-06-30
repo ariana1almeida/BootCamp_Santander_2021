@@ -1,0 +1,9 @@
+# Grafos
+
+São estruturas que permitem programar a relação entre objetos, esses objetos são vértices, ou nós do grafo, e os relacionamentos são as arestas.
+
+Na imagem abaixo, os circulos são objetos, e as linhas que fazem relacionamento entre os objetos são as arestas.
+
+![image-20210629202929725](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210629202929725.png)
+
+Esse sistema permite qualquer tipo de estrutura e de busca, com várias opções de relacionamentos e caminhos. É utilizados em algoritmos de inteligência artificial e algoritmos mais complexos.

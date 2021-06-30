@@ -1,0 +1,4 @@
+# Filas
+
+Admite remoção e inserção de elementos seguindo a regra PEPS de pilhas: o elemento removido é o que está na estrutura a mais tempo, ou seja, o primeiro objeto inserido na fila.
+

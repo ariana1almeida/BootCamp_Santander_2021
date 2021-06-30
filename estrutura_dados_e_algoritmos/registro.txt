@@ -1,0 +1,38 @@
+# Registro
+
+Enquanto arrays permitem armazenar vários dados de um único tipo de dados (inteiro terá só inteiros, real terá só real), o Registro permite armazenar mais de um tipo de dado. O registro é composto por campos que especificam cada uma das informações que o compõem. Toda estrutura de registro tem um nome, e seus campos podem ser acessados por meio do uso do ponto(.). Por exemplo, para procurar o preço de um livro.
+
+```c
+estrutura_livro = registro
+
+​	nome : caracter
+
+​	preco : real
+
+​	pagina : inteiro
+
+fimregistro
+
+i inteiro
+
+livro array[1..3] de estrutura_livro
+
+para i de 1 ate 3 faca
+
+​	leia(livro[i].nome, livro[i].preco, livro[i].paginas)
+
+fimpara
+
+Escreva("Esses foram os dados digitados")
+
+para i de 1 ate 3 faca
+
+​	escreva(livro[i].nome,livro[i].preco, livro[i.paginas])
+
+fimpara
+
+
+
+
+```
+

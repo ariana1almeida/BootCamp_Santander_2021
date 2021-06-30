@@ -1,0 +1,26 @@
+# Estrutura de dados
+
+
+
+Estrutura organizada de dados na memória de um dispositivo, para que os dados possam ser utilizados de forma correta.
+
+Muitas aplicações usam uma ou varias estruturas, e elas são especializadas em algo.
+
+Para aplicar essas estruturas, é criada a situação por **algoritmos**, que é um conjunto de instruções estruturadas e ordenadas.
+
+
+
+#### operações básicas:
+
+ Inserir dados, excluir dados, localizar elementos, percorrer todos os itens constituintes da estrutura para visualização, classificar em ordem numérica, alfabética, etc.
+
+#### principais estruturas:
+
+- vetores e matrizes (arrays)
+- registro
+- lista
+- pilha
+- fila
+- arvore
+- tabela hash
+- grafos

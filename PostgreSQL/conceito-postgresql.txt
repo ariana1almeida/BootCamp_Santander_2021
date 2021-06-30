@@ -1,0 +1,49 @@
+# PostgreSQL
+
+##### Fundamentos de banco de dados:
+
+**Dados** são valores brutos, fatos brutos, observações documentadas, registros soltos, que são recolhidos e armazenados sem sofrer qualquer tipo de alteração.
+
+**Informações** são conjuntos de dados relacionados sobre um domínio específico, e que são atribuídos sentido, passando a gerar valor para eles.
+
+###### Modelos relacional:
+
+**Modelar** é criar um modelo que vai explicar o comportamento de um software.
+
+**Modelo de dados** são ferramentas que vao demonstrar como as estruturas de dados estão organizadas e se relacionam entre si
+
+**Modelo relacional** é modelo de dados representativo e que se baseia no principio de que todos os dados serão armazenados em tabelas, compostas de linhas e colunas.
+
+**Linhas**, também conhecidas como **tuplas**, são os dados organizados, ou seja, os valores das tabelas.
+
+**Colunas** são os atributos desses dados.
+
+Tabelas são conjunto de dados dispostos em colunas e linhas referentes a um objetivo comum
+
+###### O que pode ser definido como tabelas?
+
+- **Coisas tangíveis**
+  - Elementos físicos (carro, produto, animal)
+- **Funções**
+  - Perfis de usuário, status de compra
+- **Eventos ou ocorrências**
+  - Produtos de um pedido, histórico de dados
+
+###### Colunas importantes
+
+- Chave Primária / Primary Key / PK
+  - Conjunto de um ou mais campos que nunca se repetem. Identidade da tabela. São utilizados como índice de referência na criação de relacionamentos entre tabelas.(exemplo: ID)
+- Chave Estrangeira / Foreign Key / FK
+  - Valor de referência a um PK de outra tabela ou da mesma tabela para criar um relacionamento
+
+###### Sistema de gerenciamento de banco de dados (SGBD)
+
+Conjunto de softwares responsáveis pelo gerenciamento de um banco de dados. Ex.:Oracle, PostgreSQL, MySQL, MongoDB, etc.
+
+
+
+##### Introdução ao PostgreSQL
+
+Sistema de gerenciamento de banco de dados objeto relacional. Banco de dados opensource, pode ser utilizado, modificado e distribuído.
+
+PostgreSQL tem uma arquitetura multi-processos. Modelo cliente/servidor. Tem suporte para várias linguagens.

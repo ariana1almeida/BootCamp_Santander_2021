@@ -1,0 +1,8 @@
+# Listas
+
+Armazenam dados de determinado tipo em uma ordem específica. As listas possuem tamanho ajustável, diferente de arrays, que têm tamanho fixo.
+
+#### tipos de lista:
+
+- lista ligada - existem nós, que são como índices, e cada um dos nós conhecem o valor que está sendo armazenado em seu interior além de conhecer o elemento posterior a ele.
+- lista duplamente ligada - A diferença dessa é que ela é bi-direcional, pode fazer uma ligação com o valor anterior assim como o próximo elemento.
