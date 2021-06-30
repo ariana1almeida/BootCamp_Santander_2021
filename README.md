@@ -8,6 +8,7 @@ Aqui você irá encontrar minhas anotações e meus exercícios feitos durante a
 
 - Lógica de Programação Essencial :green_book:
 - Introdução ao Git e GitHub:green_book:
+- Estrutura de dados e Algoritmos:green_book:
 - Conceitos e melhores práticas com banco de dados PostgreSQL :open_book:
 
 
