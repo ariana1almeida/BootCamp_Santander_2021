@@ -1,0 +1,81 @@
+# REVISÃO POSTGRESQL
+
+- Dado x informação
+  - Dado - Elemento bruto
+  - informação - conjunto de dados tratados
+- banco de dados
+  - é o conjunto de dados relacionados e armazenados de forma estruturada
+
+**banco de dados relacional**
+
+- conceito base: entidade x relacionamento
+
+  - atributos: campo, coluna tipo
+  - cliente< comprou >produto
+
+- acid - atomicidade, consistencia isolamento e durabilidade - garante integridade 
+
+  ![image-20210701214648781](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210701214648781.png)
+
+**get started postgresql**
+
+- banco de dados open-source;
+- desenvolvido pela postgresql global development group
+- ferramentas: psql, pgadmin
+- integração com diversos plugins (python);
+- padrao sql: 2008
+- manutenção online - non-blocking indexes;
+- sql/json path
+
+
+
+- macOS
+
+- linux/windows
+
+- bsd/solaris
+
+  
+
+- cloud marketplace
+
+  - aws, azure
+
+  
+
+- single instance, replication (primary-standby)
+
+**banco de dados relacionais x nao relacionais:**
+
+num banco nao relacional, ele nao te obriga a criar estruturalmente a tabela, pode-se criar as tabelas de forma mais solta.
+
+
+
+comandos psql
+
+\c (lugar) volta pro lugar anterior
+
+\dt - mostra relações criadas
+
+\l - mostra lista
+
+
+
+
+
+postgres é escrito em c
+
+
+
+uma boa pratica é colocar tb_nometabela
+
+
+
+truncate apaga a tabela
+
+delete from tb_diretor where id_diretor=1; - deleta um item especifico da tabela, no caso o id diretor 1
+
+postgresql tem a mesma sintaxe de sql do mysql
+
+
+

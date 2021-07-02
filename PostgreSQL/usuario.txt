@@ -1,0 +1,282 @@
+# Usuários postgresql
+
+Roles (papeis ou funções), users (usuarios) e grupos de usuários são 'contas', perfis de atuação em um banco de dados, que possuem permissões em comum ou específicas.
+
+
+
+CREATE ROLE name [[WITH]option[...]]
+
+onde option pode ser:
+
+SUPERUSER/NOSUPERUSER
+
+CREATEDB/NOCREATEDB
+
+CREATEROLE/NOCREATEROLE
+
+INHERIT/NOINHERIT
+
+LOGIN/NOLOGIN
+
+REPLICATION/NOREPLICATION
+
+BYPASSRLS/NOBYPASSRLS
+
+CONNECTION LIMIN connlimit
+
+[ENCRYPTED] PASSWORD 'password'/ PASSWORD NULL
+
+VALID UNTIL 'timestamp'
+
+INROLE role_name[, ...]
+
+IN GROUP role_name [, ...]
+
+ROLE role_name [, ...]
+
+ADMIN role_name[, ...]
+
+USER role_name[, ...]
+
+SYSID uid
+
+
+
+Exemplo:
+
+
+
+CREATE ROLE administradores
+
+​	CREATDB
+
+​	CREATEROLE
+
+​	INHERIT
+
+​	NOLOGIN
+
+​	REPLICATION
+
+​	BYPASSRLS
+
+​	CONNECTION LIMIT -1;
+
+
+
+CREATE ROLE professores
+
+​	NOCREATDB
+
+​	NOCREATEROLE
+
+​	INHERIT
+
+​	NOLOGIN
+
+​	NOBYPASSRLS
+
+​	CONNECTION LIMIT 10;
+
+
+
+CREATE ROLE alunos
+
+​	NOCREATEDB
+
+​	NOCREATEROLE
+
+​	INHERIT
+
+​	NOLOGIN
+
+​	NOBYPASRLS
+
+​	CONNECTION LIMIT 90;
+
+
+
+###### Associação entre roles
+
+Quando uma role assume as permissões de outra role. Necessário a opção inherit
+
+No momento de criação da role:
+
+-IN ROLE (passa a pertencer a role informada)
+
+-ROLE (a role informada passa a pertencer a nova role)
+
+Ou após a criação da role
+
+-GRANT [role a ser concedida] TO [role a assumir as permissões].
+
+Ex.:
+
+CREATE ROLE professores
+
+​	NOCREATDB
+
+​	NOCREATEROLE
+
+​	INHERIT
+
+​	NOLOGIN
+
+​	NOBYPASSRLS
+
+​	CONNECTION LIMIT -1;
+
+CREATE ROLE daniel LOGIN CONNECTION LIMIT 1 PASSWORD '123' IN ROLE professores;
+
+(a rola daniel passa a assumir as permissões da role professores)
+
+CREATE ROLE daniel LOGIN CONNECTION LIMIT 1 PASSWORD '123' ROLE professores;
+
+(a role professores passar a fazer parte da role daniel assumindo suas permissões)
+
+CREATE ROLE daniel LOGIN CONNECTION LIMIT 1 PASSWORD '123';
+
+GRANT professores TO daniel;
+
+
+
+###### Desassociar membros entre roles
+
+REVOKE [role que será revogada] FROM [role que terá suas permissões revogadas]
+
+REVOKE professores FROM daniel;
+
+
+
+###### Alterando uma role
+
+ALTER ROLE role_specification [ WITH ] option [ ... ]
+
+onde option pode ser:
+
+SUPERUSER/NOSUPERUSER
+
+CREATEDB/NOCREATEDB
+
+CREATEROLE/NOCREATEROLE
+
+INHERIT/NOINHERIT
+
+LOGIN/NOLOGIN
+
+REPLICATION/NOREPLICATION
+
+BYPASSRLS/NOBYPASSRLS
+
+CONNECTION LIMIN connlimit
+
+[ENCRYPTED/UNENCRYPTED] PASSWORD 'password'
+
+VALID UNTIL 'timestamp'
+
+###### Excluindo uma role
+
+DROP ROLE role_specification;
+
+DROP ROLE daniel;
+
+
+
+###### Administrando acessos (GRANT)
+
+sÃO PRIVILÉGIOS DE ACESSO AOS OBJETOS DO BANCO DE DADOS.
+
+**PRIVILÉGIOS**
+
+- **tabela**
+- coluna
+- sequence
+- **database**
+- domain
+- foreign data wrapper
+- foreign server
+- **function**
+- language
+- large object
+- **schema**
+- tablespace
+- type
+
+
+
+###### DATABASE
+
+GRANT {{CREATE / CONNECT / TEMPORARY / TEMP}[, ...] / ALL [PRIVILEGES]}
+
+​	ON DATABASE database_name [, ...]
+
+​	TO role_specification [, ...] [WITH GRANT OPTION]
+
+
+
+###### SCHEMA
+
+GRANT {{CREATE/USAGE}[, ...] / ALL [PRIVILEGES]}
+
+​	ON SCHEMA schema_name [, ...]
+
+​	TO role_specification [, ...] [ WITH GRANT OPTION]
+
+###### TABLE
+
+GRANT {{SELECT/INSERT/UPDATE/DELETE/TRUNCATE/REFERENCES/TRIGGER} [, ...] / ALL[PRIVILEGES]}
+
+​	ON{[TABLE] table_name [, ...] / ALL TABLES IN SCHEMA schema_name[, ...]}
+
+​	TO role_specification [, ...] [ WITH GRANT OPTION]
+
+
+
+###### REVOKE
+
+Retira as permissões da role
+
+
+
+**DATABASE**
+
+REVOKE [GRANT OPTION FOR]
+
+{{CREATE/CONNECT/TEMPORARY/TEMP}[, ...] / ALL [PRIVILEGES]}
+
+​	ON DATABASE database_name [, ...] FROM {[GROUP] role_name/ PUBLIC} [, ...] [CASCADE/RESTRICT]
+
+
+
+**SCHEMA**
+
+REVOKE [GRANT OPTION FOR]
+
+​	{{CREATE/USAGE}[, ...] / ALL [PRIVILEGES]}
+
+​	ON SCHEMA schema_name [, ...]
+
+​	FROM {[GROUP] role_name/PUBLIC} [, ...] [CASCADE/RESTRICT]
+
+
+
+**TABLE**
+
+REVOKE [GRANT OPTION FOR]
+
+​	{{SELECT/INSERT/UPDATE/DELETE/TRUNCATE/REFERENCES/TRIGGER}[, ...] / ALL [PRIVILEGES]}
+
+​	ON {[TABLE] table_name [, ...] /ALL TABLES IN SCHEMA schema_name [, ...]}
+
+​	FROM {[GROUP] role_name/PUBLIC} [, ...] [CASCADE/RESTRICT]
+
+
+
+###### Revogando todas as permissões (simplificado)
+
+REVOKE ALL ON TABLES IN SCHEMA [schema] FROM [role];
+
+REVOKE ALL ON SCHEMA [schema] FROM [role];
+
+REVOKE ALL ON DATABASE [database] FROM []
+

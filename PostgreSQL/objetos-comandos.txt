@@ -1,0 +1,337 @@
+# Objetos e comandos
+
+
+
+###### Database, Schemas e Objetos
+
+**Database** é o banco de dados. Grupo de schemas e seus objetos, como tabelas, types, views, funções, entre outros. Seus schemas e objetos não podem ser compartilhados entre si. Cada database é separado um do outro compartilhando apenas usuários/roles e configurações do cluster PostgreSQL.
+
+
+
+**Schemas** é um grupo de objetos, como tabelas, types, views, funções, entre outros. É possível relacionar objetos entre diversos schemas. 
+
+Por exemplo: schema public e schema curso podem ter tabelas com o mesmo nome (teste por exemplo) relacionados entre si.
+
+**Objetos** são as tabelas, views, funções, types, sequences, entre outros, pertencentes ao schema.
+
+
+
+###### Database
+
+CREATE DATABASE name
+
+[[WITH][OWNER [=]] [OWNER [=] user_name]
+
+[TEMPLATE [=] template]
+
+[ENCODING [=] encoding]
+
+[LC_COLLATE [=] lc_collate]
+
+[LC_CTYPE [=] lc_ctype]
+
+[TABLESPACE [=] tablespace_name]
+
+[ALLOW_CONNECTIONS [=] allowconn]
+
+[CONNECTION LIMIT [=] connlimit]
+
+[IS_TEMPLATE [=] istemplate]]
+
+
+
+ALTER DATABASE name RENAME TO new_name
+
+ALTER DATABASE name OWNER TO {new_owner/CURRENT_USER/SESSION_USER}
+
+ALTER DATABASE name SET TABLESPACE new_tablespace
+
+
+
+DROP DATABASE [nome]
+
+
+
+###### SCHEMA
+
+CREATE SCHEMA schema_name [AUTHORIZATION role_specification]
+
+ALTER SCHEMA name RENAME TO new_name
+
+ALTER SCHEMA NAME OWNER TO {new_owner/ CURRENT_USER/SESSION_USER}
+
+DROP SCHEMA [nome]
+
+**MELHORES PRÁTICAS**
+
+CREATE SCHEMA IF NOT EXISTS schemas_name [AUTHORIZATION role_specification]
+
+DROP SCHEMA IF EXISTS [name];
+
+
+
+###### Tabelas, Colunas e Tipos de dados
+
+**Tabelas** são conjuntos de dados dispostos em colunas e linhas referentes a um objetivo comum.
+
+As **colunas** são consideradas com "campos da tabela", como atributos da tabela.
+
+As linhas de uma tabela são chamadas também de **tuplas**, e é onde estão contidos os valores, os dados.
+
+
+
+**Exemplo**:
+
+TABELA = automovel
+
+COLUNA 1 = tipo (carro, moto, aviao)
+
+COLUNA 2 = ano_fabricacao (2010, 2011, 2020)
+
+COLUNA 3 = capacidade _pessoas (1,2,350)
+
+COLUNA 4 = fabricante (honda, avianca, yamaha)
+
+
+
+TABELA = produto
+
+COLUNA 1 = codigo serial do produto
+
+COLUNA 2 = tipo (vestuario, eletronico, beleza)
+
+COLUNA 3 = preco
+
+
+
+###### PRIMARY KEY / Chave Primária / PK
+
+No conceito de modelo de dados relacional e obedecendo as regras de normalização, uma PK é um conjunto de um ou mais campos que nunca se repetem em uma tabela e que seus valores garantem a integridade do dado único e a utilização do mesmo como referência para o relacionamento entre demais tabelas.
+
+- não pode haver duas ocorrências de uma mesma entidade com o mesmo conteúdo na PK
+- A chave primária não pode ser composta por atributo opcional, ou seja, atributo que aceite nulo.
+- Os atributos identificadores devem ser o conjunto mínimo que pode identificar cada instância de uma entidade
+- Não devem ser usadas chaves externas
+- Não deve conter informação volátil, que mude.
+
+
+
+###### Foreign Key / Chave Estrangeira / FK
+
+Campo, ou conjunto de campos que são referências de chaves primárias de outras tabelas ou da mesma tabela. Sua principal função é garantir a integridade referencial entre tabelas.
+
+###### Tipos de dados
+
+**Numeric Types**
+
+Monetary Types
+
+**Character Types**
+
+Binary Data Types
+
+**Date/Time Types**
+
+**Boolean Type**
+
+Enumerated Types
+
+Geometric Types
+
+Network Address Types
+
+Bit String Types
+
+Text Search Types
+
+UUID Type
+
+XML Type
+
+JSON Types 
+
+Araays
+
+Composite Types
+
+Range Types
+
+Domain Types
+
+Object Identifies Types
+
+pg_lsn Type
+
+Pseudo-Types
+
+
+
+**Numéricos**
+
+![image-20210701161629107](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210701161629107.png)
+
+
+
+**Caracteres**
+
+![image-20210701161748865](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210701161748865.png)
+
+
+
+**Datas**
+
+![image-20210701161913831](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210701161913831.png)
+
+**Booleanos**
+
+![image-20210701162012402](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210701162012402.png)
+
+
+
+###### DML e DDL
+
+
+
+**DML** é Data Manipulation Language
+
+Linguagem de manipulação de dados
+
+INSERT, UPDATE, DELETE, SELECT
+
+*o select, alguns consideram como DML, outros como DQL, que significa data query language, ou linguagem de consulta de dados
+
+**DDL** é Data Definition Language
+
+Linguagem de definição de dados
+
+CREATE, ALTER, DROP
+
+
+
+**CREATE / ALTER / DROP**
+
+CREATE [objeto] [ nome do objeto] [opções];
+
+ALTER [objeto] [nome do objeto] [opções];
+
+CREATE DATABASE dadosbancarios;
+
+ALTER DATABASE dadosbancarios OWNER TO diretoria;
+
+DROP DATABASE dadosbancarios;
+
+CREATE SCHEMA IF NOT EXISTS bancos;
+
+ALTER SCHEMA bancos OWNER TO diretoria;
+
+DROP SCHEMA IF EXISTS bancos;
+
+
+
+TABELAS:
+
+
+
+CREATE TABLE[IF NOT EXISTS] [nome da tabela] (
+
+​	[nome do campo] [tipo] [regras] [opções],
+
+​	[nome do campo] [tipo] [regras] [opções],
+
+​	[nome do campo] [tipo] [regras] [opções]
+
+);
+
+ALTER TABLE[ nome da tabela] [opções];
+
+DROP TABLE [nome da table];
+
+
+
+CREATE TABLE IF NOT EXISTS banco (
+
+​	codigo INTEGER PRIMARY KEY,
+
+​	nome VARCHAR(50) NOT NULL,
+
+​	data_criacao TIMESTAMP NOT NULL DEFAULT NOW()
+
+);
+
+CREATE TABLE IF NOT EXISTS banco (
+
+​	codigo INTEGER,
+
+​	nome VARCHAR(50) NOT NULL,
+
+​	data_criacao TIMESTAMP NOT NULL DEFAULT NOW(),
+
+​	PRIMARY KEY(codigo)
+
+);
+
+ALTER TABLE banco ADD COLUMN tem_poupanca BOOLEAN;
+
+DROP TABLE IF EXISTS banco;
+
+
+
+**INSERT**
+
+INSERT INTO [nome da tabela] ([campos da tabela,])
+
+VALUES ([valores de acordo com a ordem dos campos acima,]);
+
+
+
+INSERT INTO [nome da tabela] ([campos da tabela,])
+
+SELECT [valores de acordo com a ordem dos campos acima,];
+
+
+
+**EXEMPLO:**
+
+INSERT INTO banco (codigo, nome, data_criacao)
+
+VALUES (100, 'Banco do Brasil', now());
+
+INSERT INTO banco (codigo, nome, data_criacao)
+
+SELECT 100, 'Banco do Brasil', now();
+
+
+
+###### UPDATE
+
+UPDATE [nome da tabela] SET [campo1] = [novo valor do campo1], [campo2] = [novo valor do campo2], ...
+
+[WHERE + condições]
+
+
+
+**ATENÇÃO: muito cuidado com os updates. Sempre utilize-os com condição.**
+
+UPDATE banco SET codigo = 500 WHERE codigo = 100;
+
+UPDATE banco SET  data_criacao = now() WHERE data_criacao IS NULL;
+
+**DELETE**
+
+DELETE FROM[nome da tabela] [WHERE+ condições]
+
+**ATENÇÃO: muuito cuidado com os deletes. Sempre utilize-os com condição.**
+
+DELETE FROM banco WHERE codigo = 512;
+
+DELETE FROM banco HERE nome = 'Conta Digital';
+
+**SELECT*
+
+SELECT [campos da tabela] FROM [nome da tabela] [WHERE+condições]
+
+**DICAS DE BOAS PRÁTICAS = Evite sempre que puder o SELECT***
+
+SELECT codigo, nome FROM banco;
+
+SELECT codigo, nome FROM banco WHERE data_criacao > '2019-10-15 15:00:00';
