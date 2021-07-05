@@ -1,0 +1,49 @@
+# TRANSAÇÕES
+
+Conceito fundamental de todos os sistemas de bancos de dados.
+
+Conceito de múltiplas etapas / códigos reunidos em apenas 1 transação, onde o resultados precisa ser tudo ou nada.
+
+**EXEMPLOS:**
+
+BEGIN;
+
+UPDATE conta SET valor = valor - 100.00
+
+​	WHERE nome = 'Alice';
+
+UPDATE conta SET valor = valor + 100. 00
+
+​	WHERE nome = 'Bob';
+
+COMMIT;
+
+
+
+ele dá um rollback quando ele desfaz uma transação
+
+
+
+BEGIN;
+
+​	UPDATE conta SET valor = valor - 100.00
+
+​	WHERE nome = 'Alice';
+
+
+
+SAVEPOINT my_savepoint;
+
+​	UPDATE conta SET valor = valor + 100.00
+
+​	WHERE nome = 'Bob';
+
+*Caso essa operação tenha sido feita por engano, e o certo seria mandar para Wally, então:*
+
+ROLLBACK TO my_savepoint;
+
+​	UPDATE conta SET valor = valor +100.00
+
+​	WHERE nome = 'Wally'
+
+COMMIT;

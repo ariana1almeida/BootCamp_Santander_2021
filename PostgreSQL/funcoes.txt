@@ -1,0 +1,133 @@
+# FUNÇÕES
+
+**DEFINIÇÃO**
+
+Conjunto de códigos que são executados dentro de uma transação com a finalidade de facilitar a programação e obter o reaproveitamento/reutilização de códigos.
+
+Existem 4 tipos de funções:
+
+- query language functions (funções escritas em SQL)
+- procedural language functions (funnções escritas em, por exemplo, PL/pgSQL ou PL/py)
+- internal functions
+- C-language functions
+
+Porém, o foco aqui é falar sobre USER DEFINED FUNCTIONS, funções que podem ser criadas pelo usuário.
+
+
+
+**LINGUAGENS**
+
+- SQL
+- **PL/PGSQL**
+- PL/PY
+- PL/PHP
+- PL/RUBY
+- PL/JAVA
+- PL/LUA
+
+ 
+
+
+
+![image-20210704204632036](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210704204632036.png)
+
+
+
+**IDEMPOTÊNCIA**
+
+CREATE OR REPLACE FUNCITON [nome da função]
+
+- mesmo nome
+- mesmo tipo de retorno
+- mesmo número de parâmetros/argumentos
+
+
+
+**RETURNS**
+
+- TIPO DE RETORNO (DATATYPE)
+  - INTEGER
+  - CHAR/VARCHAR
+  - BOOLEAN
+  - ROW
+  - TABLE
+  - JSON
+
+
+
+**SEGURANÇA**
+
+- SECURITY
+  - INVOKER
+  - DEFINER 
+
+
+
+**COMPORTAMENTO**
+
+- IMMUTABLE
+
+  Não pode alterar o banco de dados. Funções que garantem o mesmo resultado para os mesmos argumentos/parâmetros da função. Evitar a utilização de selects, pois tabelas podem sofrer alterações.
+
+- STABLE
+
+  Não pode alterar o banco de dados. Funções que garantem o mesmo resultado para os mesmos argumentos/parâmetros da função. Trabalha melhor com tipos de current_timestamp e outros tipos variáveis. Podem conter selects.
+
+- VOLATILLE
+
+  Comportamento padrão, aceita todos os cenários.
+
+
+
+**SEGURANÇA E BOAS PRÁTICAS**
+
+- CALLED ON NULL INPUT
+
+  Padrão. 
+
+  Se qualquer um dos parâmetros/argumentos for NULL, a função será executada.
+
+- RETURNS NULL ON NULL INPUT
+
+  Se qualquer um dos parâmetros/argumentos for NULL, a função retornará NULL.
+
+
+
+**SEGURANÇA E BOAS PRÁTICAS**
+
+- SECURITY INVOKER
+
+  Padrão.
+
+  A função é executada com as permissões de quem executa.
+
+- SECURITY DEFINER
+
+  A função é executada com as permissões de quem criou a função.
+
+
+
+**RECURSOS**
+
+- COST
+
+  Custo/row em unidades de CPU
+
+- ROWS
+
+  Número estimado de linhas que será analisada pelo planner
+
+
+
+**SQL FUNCTIONS**
+
+![image-20210704210044411](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210704210044411.png)
+
+![image-20210704210244571](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210704210244571.png)
+
+
+
+**PLPGSQL**
+
+![image-20210704210431068](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210704210431068.png)
+

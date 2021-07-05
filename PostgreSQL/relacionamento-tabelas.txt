@@ -1,0 +1,71 @@
+# Relacionamento de Tabelas
+
+
+
+##### JOIN
+
+- JOIN(INNER JOIN)
+
+  Junta dados semelhantes em tabelas, independente da quantidade de dados nela.
+
+  SELECT tabela_1.campos, tabela_2.campos
+
+  FROM tabela_1
+
+  JOIN tabela_2
+
+  ​	ON tabela_2.campo = tabela_1.campo
+
+  
+
+- LEFT JOIN(LEFT OUTER JOIN)
+
+  ELE TRAZ TODOS OS REGISTROS QUE TEM NA PRIMEIRA TABELA, MESMO SE NÃO TIVER DADOS REFERENTES NA SEGUNDA TABELA
+
+  SELECT tabela_1.campos, tabela_2.campos
+
+  FROM tabela_1
+
+  LEFT JOIN tabela_2
+
+  ​	ON tabela_2.campo = tabela_1.campo
+
+  
+
+- RIGHT JOIN (RIGHT OUTER JOIN)
+
+  ELE TRAZ TODOS OS REGISTROS QUE TEM NA SEGUNDA TABELA, MESMO SE NÃO TIVER DADOS REFERENTES NA PRIMEIRA TABELA
+
+  SELECT tabela_1.campos, tabela_2.campos
+
+  FROM tabela_1
+
+  RIGHT JOIN tabela_2
+
+  ​	ON tabela_2.cmapo = tabela_1.campo
+
+  
+
+- FULL JOIN
+
+  Junta todos os dados, mostrando até os que não tem relação
+
+  SELECT tabela_1.campos, tabela_2.campos
+
+  FROM tabela_1
+
+  FULL JOIN tabela_2
+
+  ​	ON tabela_2.campo = tabela_1.campo
+
+  
+
+- CROSS JOIN
+
+  Todos os dados de uma tabela serão cruzados com todos os dados da tabela referenciada no CROSS JOIN criando uma matriz. (não recomendado)
+
+  SELECT tabela_1.campos, tabela_2.campos
+
+  FROM tabela_1
+
+  CROSS JOIN tabela_2

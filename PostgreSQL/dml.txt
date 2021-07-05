@@ -1,0 +1,147 @@
+# DML
+
+**Idempotência**
+
+Propriedade que algumas ações/operações possuem possibilitando-as de serem executadas diversas vezes sem alterar o resultado após a aplicação inicial.
+
+é uma boa pratica usar if not exists em todo seu banco de dados
+
+**MELHORES PRÁTICAS DE DDL**
+
+Importante as tabelas possuírem campos que realmente serão utilizados e que sirvam de atributo direto a um objetivo em comum.
+
+- Criar/acrescentar colunas que são "atributos básicos" do objeto: 
+
+  Exemplo: tabela CLIENTE: coluna TELEFONE/coluna AGENCIA_BANCARIA (o telefone pode mudar, assim como a agencia, então é recomendado colocar em outra coluna, atributos básicos do cliente são nome, cpf/cnpj, email)
+
+- Cuidado com regras (constraints (null not null, tamanho etc))
+
+- Cuidado com o excesso de FKs
+
+- Cuidado com o tamanho indevido de colunas
+
+  Exemplo: coluna CEP VARCHAR (255) sendo que o cep costuma ter 8 números.
+
+  
+
+  ##### DML - CRUD
+
+  ###### SELECT
+
+  SELECT (campos),
+
+  FROM tabela
+
+  [condições]
+
+  
+
+  **EXEMPLO:**
+
+  SELECT numero, nome FROM banco;
+
+  SELECT numero, nome FROM banco WHERE ativo IS TRUE;
+
+  SELECT nome FROM cliente WHERE email like '%gmail.com';
+
+  SELECT numero FROM agencia
+
+  WHERE banco_numero IN (SELECT numero FROM banco WHERE nome ILIKE '%Bradesco') (não é recomendado e uma boa prática utilizar o IN, pra não utilizar recurso desnecessário)
+
+  LIKE X ILIKE = o ilike respeita o case sensitive
+
+  
+
+###### SELECT - CONDIÇÃO (WHERE / AND / OR)
+
+WHERE (coluna/condição):
+
+- = - igual
+- ">"/ ">=" -maior/maior ou igual
+- "<"/"<=" - menor/menor ou igual
+- <>/!= - diferente
+- LIKE
+- ILIKE
+- IN
+
+Primeira condição sempre WHERE
+
+Demais condições, AND ou OR.
+
+###### 
+
+###### SELECT - DEMPOTÊNCIA
+
+SELECT (campos,)
+
+FROM tabela1
+
+WHERE EXISTS(
+
+​	SELECT (campo,)
+
+​	FROM tabela2
+
+​	WHERE campo1=valor1
+
+​	[AND/OR campoN=valorN]
+
+);
+
+Não é uma boa prática
+
+Melhor prática utilizar LEFT JOIN.
+
+
+
+**SELECT * (evitar)**
+
+(evitar)
+
+
+
+###### INSERT
+
+INSERT (campos da tabela,) VALUES(valores,);
+
+INSERT (campos da tabela,) SELECT (valores,);
+
+
+
+###### INSERT - IDEMPOTÊNCIA
+
+INSERT INTO agencia (banco_numero, numero, nome) VALUES (341,1,'Centro da cidade');
+
+
+
+INSERT INTO agencia (banco_numero, numero, nome)
+
+SELECT 341,1,'Centro da cidade'
+
+WHERE NOT EXISTS (SELECT banco_numero, numero, nome FROM agencia WHERE banco_numero = 341 AND numero = 1 AND nome = 'Centro da cidade'); (não recomendado)
+
+
+
+**ON CONFLICT**
+
+INSERT INTO agencia (banco_numero, numero, nome) VALUES (341,1,'Centro da cidade') ON CONFLICT (banco_numero, numero) DO NOTHING; (recomendado)
+
+###### UPDATE
+
+UPDATE (tabela) SET campo1 = novo_valor WHERE (condição);
+
+###### DELETE
+
+DELETE FROM (tabela) SET campo1 = novo_valor WHERE (condição);
+
+
+
+TRUNCATE
+
+"Esvazia" a tabela.
+
+TRUNCATE [TABLE] [ONLY] name [*] [, ...]
+
+​	[RESTART IDENTITY / CONTINUE IDENTITY] [CASCADE/RESTRICT]
+
+restart identity faz com que a tabela recomece do um, se não a proxima informação vai ter o numero consequente do ultimo numero da tabela excluída

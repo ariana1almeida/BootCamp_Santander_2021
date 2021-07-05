@@ -1,0 +1,80 @@
+# Funções Agregadas
+
+AVG - É o average, ou seja, o média do valor total da planilha:
+
+SELECT AVG (valor) FROM cliente_transacoes;
+
+
+
+**COUNT**- Conta o total de números de algo, ou seja, no caso eu tenho 500 clientes no total, mas na tabela mostra um por um, para ver o total sem ver a tabela inteira, se usa:
+
+SELECT COUNT (numero)
+FROM cliente;
+
+
+
+Nesse caso, eu desejo ver os emails que terminam com gmail.com, e quantos há pra cada email citado (é necessário fazer o group by para funcionar)
+
+SELECT COUNT (numero), email
+FROM cliente
+WHERE email ILIKE '%gmail.com'
+GROUP BY email;
+
+
+
+**MAX -** Mostra o número máximo de algum dado, como o máximo de cliente, o máximo (em valor, nesse caso) de transações, etc. 
+
+SELECT MAX (numero)
+FROM cliente;
+
+SELECT MAX (valor)
+FROM cliente_transacoes;
+
+Esse mostra o número máximo de cada transação
+
+SELECT MAX (valor), tipo_transacao_id
+FROM cliente_transacoes
+GROUP BY tipo_transacao_id;
+
+
+
+**MIN**- Mostra o valor mínimo de um dado, ou seja, o valor mínimo de um depósito é 2 centavos, o valor mínimo de clientes é 1, e assim por diante:
+
+SELECT MIN (valor)
+FROM cliente_transacoes;
+
+SELECT MIN (valor), tipo_transacao_id
+FROM cliente_transacoes
+GROUP BY tipo_transacao_id;
+
+
+
+**HAVING COUNT** - Utilizado com o count para determinar um valor mais preciso. No caso do exemplo, é mostrado o valor de cada transação, mas o having count determina que só mostre as que tem valor acima de 150:
+
+SELECT COUNT (id), tipo_transacao_id
+FROM cliente_transacoes
+GROUP BY tipo_transacao_id
+HAVING COUNT (id) > 150;
+
+
+
+**SUM**- Mostra a soma total de valores:
+
+SELECT SUM (valor)
+FROM cliente_transacoes;
+
+
+
+Nesse caso, a ordem é determinada, podendo ser descendente ou, por padrão, ascendente:
+
+SELECT SUM(valor), tipo_transacao_id
+FROM cliente_transacoes
+GROUP BY tipo_transcao_id
+ORDER BY tipo_transacao_id DESC;
+
+
+
+
+
+
+
