@@ -13,4 +13,4 @@ rmdir (nome da pasta)(/s/q) - deleta pasta
 /S: Remove todas as pastas e arquivos da pasta especificada, além dela mesma. Utilizado para remover uma árvore de pastas.
 /Q: Modo silencioso. Não pede confirmação para remover a árvore de pastas ao se passar o parâmetro /S.
 
-nome_comando /? - pesquisa o significado do comand
+nome_comando /? - pesquisa o significado do comando

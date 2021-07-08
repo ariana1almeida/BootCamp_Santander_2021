@@ -1,0 +1,378 @@
+# Conteitos de Java
+
+###### Classes:
+
+Todo programa java rods em cima de uma classe. Elas começam com uma letra maiúscula, e se for composta, todas as palavras iniciam com letra maiuscula
+
+
+
+Public static void é o principal para executar um programa java
+
+​	
+
+```java
+package one.digitalinnovation.classes;
+public class Programa {
+	public static void main (String [] args) {
+
+        System.out.println("Hello World!");
+
+    }
+}
+```
+
+public static = modificadores de acesso
+
+void  = tipo
+
+main =classe, metodo
+
+(String [] args) =retorno, assinatura do metodo, argumentos
+
+Programa = classe
+
+package =onde está localizado
+
+
+
+```java
+package one.digitalinnovation.classes.usuario;
+
+public class SuperUsuario {
+		
+    	private String login;
+    	private String senha;
+    	String none;
+    			
+		public SuperUsuario(final String login, final String senha) {
+            this.login = login;
+            this.senha = senha;
+        }
+    	
+    	public String getLogin() { return login; }
+    	protected String getSenha[] { return senha; }
+}
+```
+
+
+
+SuperUsuario= classe
+
+
+
+private String login;
+    	private String senha;
+    	String none;  =caracteristicas da classe, atributos com modificadores de acesso
+
+
+
+public SuperUsuario = construtor, metodo particular que leva o mesmo nome da classe, fala como será construido essa classe quando for instanciar um objeto dela
+
+
+
+(final String login, final String senha) = login e senha são parametros,
+
+public String getLogin() { return login; }
+protected String getSenha[] { return senha; } = getlogin e getsenha são dois nomes de metodos(eles nao recebem nenhum parametro() ), public seria o modificador de acesso, assim como o protected, o return seria o retorno, string é o tipo.
+
+
+
+```java
+package one.digitalinnovation.classes.usuario;
+
+public class ProgramaDoSuperUsuario {
+    public static void main(String [] args) {
+        final var superUsuario = new SuperUsuario(login:"root", senha:"1234");
+            
+        superUsuario.getLogin();
+        
+        superUsuario.getSenha();
+        
+        String root = superUsuario.nome;
+        
+    }
+}
+```
+
+ProgramaDoSuperUsuario =classe
+
+new SuperUsuario =está sendo criado um novo usuario, passando um login e uma senha
+
+com o superUsuario depois de final var, é possivel acessar os metodos (getlogin e getsenha) e parametros (superUsuario.nome).
+
+
+
+###### Tipos:
+
+- primitivos
+- wrappers
+- não primitivos
+- tipagem forte e estática
+
+
+
+```java
+package one.digitalinnovation.tipos.primitivos;
+
+public class Primitivos {
+    public static void main(String[] args) {
+        //INTEIROS
+        
+        //byte nullByte = null;
+        byte b;    //8 bits
+        byte b1 = 127;
+        byte b2 = -128;
+        //byte b3 = 129;    //to0 large
+        
+        char c;    //16 bits
+        char c1 = 'A';
+        char c2 = 15;
+        //char c3 = 'AA'    //NOK
+        //char c4 = -100;    //NOK
+        
+        short s;    //16 bits
+        short s1 = 32767;
+        short s2 = -32768;
+        
+        int i = 2147483647;    //32 bits
+        int i2 = -2147483648;
+        //int i3 = -2147483649;   too large
+        
+        //FLUTUANTES
+        
+        float f = 65f;    //32 bits  3.402,823, 5 E+38
+        float f2 = 65.0f;
+        float f3 = -0.5f;    //1.4 E-45
+        
+        double d = 1024.99;    //64 bits    1.797,693,134,862,315,7 E+308
+        double d2 = 10.2456; //4.9 E-324
+        
+        //BOLEANO
+        
+        boolean bo = true;
+        boolean bo2 = false;
+        //boolean bo3 = "false"; //NOK
+        //boolean bo4 = 'true';  //NOK
+        
+        //void v; //álavra reservada
+        
+        //System.out.println("byte : " + b); //ERROR
+    }
+}
+```
+
+inteiros: o tipo primitivo nunca pode ser nulo
+
+byte = tipo primitivo
+
+byte nullByte = null; = não pode atribuir nulo a um tipo primitivo
+
+eles possuem valores default
+
+byte = 0
+
+short = 0
+
+int = 0
+
+long = 0L
+
+float = 0.0f
+
+double = 0.0d
+
+char = "iu0000"
+
+String (or any object) = null
+
+boolean = false
+
+
+
+byte b; = byte pode ter valor nenhum, serve pra todos os tipos primitivos
+
+o byte tem 8 bits, o valor maximo que pode ser atribuido a um byte é 127, com o sinal negativo pode ser atribuido o valor maximo -128
+
+
+
+char é alfanumerico, é unico caractere
+
+
+
+short é tipo numerico, e como é 36bits seu valor maximo é 32767 e minimo -32768.
+
+
+
+o int é o mais comum para numeros inteiros, o seu range é bem grande, mas se precisar de um numero maior que o permitido é recomendado entao usar o long
+
+o long é 64 bits, bem grande, e por padrão é colocado um l no final do seu numero, pode ser maiusculo ou minusculo
+
+float = elemento flutuante de numeros  inteiros e nao inteiros, precisa colocar um f no final do numero
+
+boolean = true ou false, não aceita entre aspas 
+
+
+
+void é uma palavra reservada, ele nao é um tipo, significa um metodo que nao retorna nada
+
+
+
+se algum tipo nao for inicializado, entao ele nao vai ser lido no system.out.println
+
+
+
+###### DEFAULT VALUES
+
+```java
+package one.digitalinnovation.tipos.primitivos;
+
+public class DefaultValues {
+    public static void main (String[] args){
+        final Default d = new Default();
+        System.out.println(d.getI());
+        Sustem.out.println(d.isActive());
+    }
+}
+
+class Default {
+    int i;
+    boolean active;
+    
+    public int getI() {return i;}
+    public boolean isActive() {return active;}
+}
+```
+
+getI vai retornar o i
+
+o isActive irá retornar se está ativo ou nao, ou seja, true ou false
+
+como não foi dado um valor especifico para o i, ele retorna o valor default, que é 0
+
+
+
+###### WRAPPERS
+
+- São objetos que representam os primitivos
+- Auto-boxing e Unboxing
+
+
+
+```java
+public class Wrappers {
+    public static void main (String[] args) {
+        //Autoboxing
+        
+        Byte b = 127; //byte
+        Byte b2 = -128;
+        Byte nullByte = null;
+        
+        Character c = 'A'; //char
+        Character c2 = 15;
+        
+        Short s = 32767; //short
+        Short s2 = -32768;
+        
+        Integer i = 2147483647; //int
+        Integer i2 = -2147483648;
+        
+        Long l = 9223372036854775807l; //long
+        Long l2 = -9223372036854775808l;
+        
+        Float f = 65f; //float
+        Float f2 = 65.0f;
+        Float f3 = -0.5f;
+        
+        Double d = 1024.99; //Double
+        Double d2 = 10.2456;
+        
+        Boolean bo = true; //boolean
+        Boolean bo2 = false;
+        
+        Boolean bo3 = Boolean.getBoolean(s:"false");
+        Boolean bo4 = Boolean.value0f("true"); //0K
+    }
+}
+```
+
+Tudo que está escrito aqui deixa de ser uma tipo e vira uma classe, pois está sendo escrita com letra maiuscula.
+
+Autoboxing você nao da um nil nela, e da uma autoinicialização, e usando o wrapper você consegue usar valor nulo. wrappers são objetos.
+
+tem como atribuir objetos utilitarios, consegue atribuir um boolean de uma string.
+
+
+
+###### UNBOXING
+
+```java
+public class Unboxing {
+    public static void main (String[] args){
+        //int i = new Integer(3);
+
+        int inteiro = 1024;
+
+        //boolean b = new Boolean(true);
+        boolean b2 = Boolean.TRUE;
+        boolean b3 = Boolean.getBoolean(s:"false");
+    }
+}
+```
+
+uboxing é dado uma classe  e consegue atribuir a um tipo primitivo. é quando vc constroi um objeto e atribui a um tipo primitivo
+
+
+
+###### NÃO PRIMITIVOS
+
+
+
+String, Number, Object e qualquer outro objeto, letra maiuscula.
+
+
+
+###### STRING
+
+Sequencia de caracteres
+
+Ex.: String texto = "Meu texto para apresentação";
+
+
+
+```java
+public class NaoPrimitivos {
+    public class static void main (String[] args) {
+        String texto = "Meu texto para apresentação";
+        
+        Void v; //tipo valido
+       	
+        Object o = new Object();
+        
+        Number numero = 100;
+        
+        numero.toString();
+    }
+}
+```
+
+objeto void é um tipo valido mas é vazio
+
+object é o objeto principal do java
+
+number extend number
+
+a vasriavel number permite chamar varias strings
+
+
+
+###### TIPAGEM FORTE E ESTÁTICA
+
+tipagem estática - os tipos da variavel são verificados em tempo de compilação, ja previne de possiveis erros.
+
+
+
+tipagem forte - uma vez q foi atribuido um tipo a uma variavel, não é possível mudar o tipo
+
+
+
+tipo inferido - novidade para o java a partir da versao 10, é possivel atribuir tipos para as variaveis sem de forma explicita dizer o tipo, pode ser utilizado a palavra var, e a tipagem continua forte.
