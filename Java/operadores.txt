@@ -1,0 +1,154 @@
+# CONDIÇÕES E OPERADORES
+
+
+
+if (CONDIÇÃO) {
+
+FAZ OQ TA AQUI
+
+}else (CONDIÇÃO){
+
+se o primeiro n for a condição certa, ele vai executar o que tiver aqui
+
+}
+
+if (condição)
+
+System.out.println ("etc)"
+
+não precisa de chaves pois tem uma condição apenas
+
+
+
+final var ternario = condicao ? "é verdadeira" : "é falsa";
+
+if resumido, se a condição ? foi verdadeira vai dar o da frente dos dois pontos, se não , o que fica na direita dos dois pontos
+
+
+
+if (condição){
+
+faz tal coisa
+
+}else if(condição){
+
+senão faz isso
+
+}else(condição){
+
+é se n for nenhuma das anteriores, é isso aqui
+
+};
+
+operador logico
+
+shor circuit - 
+
+if (numero < 5 && letra.equals ("A")){
+
+faz isso, as duas precisam ser verdadeiras}
+
+if (numero <5 || letra.equals("A")){
+
+pode ser um ou outro}
+
+
+
+non short circuit
+
+if (verifica(numero:15) | verifica (letra:A)){
+
+pode ser um ou outro}
+
+
+
+incremento
+
+var numero =1;
+
+numero = numero +1;
+
+system.out.println(++numero);
+
+incrementa quando é lido e ja printa o numero incrementado
+
+
+
+system.out.println(numero++);
+
+system.out.println(numero);
+
+mostra o numero original e depois incrementa
+
+
+
+system.out.println(--numero);
+
+mesma regra para o negativo
+
+
+
+
+
+###### LAÇOS DE REPETIÇÃO
+
+for (condição)
+
+print tal coisa;
+
+for (int i = 0; i<=10;i=i+1){
+
+i começa 0, e enquanto for menor que 10, aumenta de 1 em 1.
+
+System.out.println("I=" + i);
+
+}
+
+
+
+while (condição){
+
+faz isso aqui enquanto a condição é tal
+
+}
+
+var x=0;
+
+while (x<1){
+
+System.out.println("Dentro do while...");
+
+x++;
+
+}
+
+var y = 0;
+
+//testa a condição depois
+
+do{
+
+system.out.println(Dentro do do/while...");
+
+}while (y++<1);
+
+
+
+ele não é verificada antes nessa ultima condição, por isso printa duas vezes, na primeira printa 0 e na segunda printa 1 e encerra o programa.
+
+
+
+IntStream.of(1,2,3,4,5).forEach(n->{
+
+​	System.out.println(n);
+
+});
+
+IntStream.range(0,3).forEach(n->{
+
+​	System.out.println("Número = "+n);
+
+});
+
+
+

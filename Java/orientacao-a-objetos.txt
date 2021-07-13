@@ -1,0 +1,53 @@
+# Orientação a objetos
+
+###### O paradigma da orientação a objetos
+
+**Classe** - modelo a ser seguido. Uma classe vai funcionar como uma espécie de molde que servirá como base para construir algo.
+
+Por exemplo: Quando pensamos em construir uma casa, nós fazemos uma planta baixa. Ela será o modelo que utilizaremos para construir algo concreto. As classes funcionam de forma parecida.
+
+```java
+public class Pessoa {
+private String nome = "Marco";
+public String getNome() {
+return nome;
+}
+}
+```
+
+**Objeto**: Agora que entendemos que temos um modelo que podemos seguir. O que podemos fazer com esse modelo? Continuando a analogia da casa, depois de termos a planta baixa, nós começamos a construir. E o resultado do que nós construímos, vamos chamar de objeto. Podem ser feitas várias casas com a mesma planta. Quando nós utilizarmos a nossa classe Pessoa - mostrada no código anterior - para criar um objeto, nos diremos que estamos instanciando um objeto da classe Pessoa. E esse termo é bem simples de entender. O que acontece é que podemos criar vários objetos de uma mesma classe, ou seja, várias instâncias de objetos, e essas instâncias seriam os quartos da casa.
+
+
+
+```java
+public class ExemploPessoa {
+    public static void main(String[] args) {
+        Pessoa pessoa = new Pessoa();
+        System.out.println(pessoa.getNome());
+        //marco
+    }
+}
+```
+
+tipo Pessoa vira objeto pessoa.
+
+
+
+**Atributos** - Agora vamos pensar no que nós definimos como nome. Foi tão intuitivo nós pensarmos que uma pessoa teria um nome que nem demos importância a ele. O nome é uma característica de uma Pessoa e pode ser diferente de pessoa para pessoa. O nome é um atributo da pessoa.
+
+**Métodos** - Agora vamos pensar que uma pessoa pode ter ações. Por exemplo, uma pessoa pode falar. Pensando em um cenário mais específico, uma pessoa pode falar o seu nome. As ações que nós definimos que uma classe pode ter, nós chamamos de métodos.
+
+
+
+```java
+public class ExemploMetodos {
+    public static void main (String[] args) {
+        Pessoa pessoa = new Pessoa();
+        
+        System.out.println(pessoa.falarMeuProprioNome());
+        //Olá, meu nome é Marco
+    }
+}
+```
+
+Exercício final: Crie uma classe Carro. Nessa classe você deverá ter a quantidade de pessoas que estão dentro do carro. E também é preciso que tenha uma forma de adicionar e remover pessoas de dentro do carro.

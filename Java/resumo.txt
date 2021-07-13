@@ -1,0 +1,124 @@
+Classe é um predio de apartamentos,  objetos são os apartamentos, atributos são os quartos
+
+
+
+variáveis são caixas, são compostas por tipos, nomes e valores, pois cada caixa pode armazenar um tipo de dado.
+
+variavel int a; é uma variavel int com nome a. int são variáveis para numeros.
+
+variavel String s; cria uma variável String com o nome s, que são variaveis para textos.
+
+variavel double c; cria uma variavel double com o nome c, que são variaveis para numeros fracionarios ou reais.
+
+para atribuir valor a variaveis, se utiliza o simbolo de =.
+
+i=3;
+
+a=1;
+
+b=a+1;
+
+x=3
+
+x=x+1;
+
+
+
+para realizar uma comparação(dizer que algo é igual a outra coisa) se utiliza == .
+
+só pode atribuir um valor a cada variavel.
+
+String s; vai armaxenar texto
+
+int x; vai armazenar um numero inteiro
+
+int a,b,c; vão armazenar numeros inteiros.
+
+não é possível criar duas variáveis com nomes iguais no mesmo método, só em metodos diferentes, seriam como ter caixas em casas diferentes. Nomes de variáveis não podem ter espaços, +, -, etc.
+
+é possivel criar uma variável e atribuir um valor a ela para economizar tempo e espaço:
+
+int a =5;
+
+int b =6;
+
+int c = 7;
+
+int d = c+1;
+
+String s = "Eu sou o Amigo";
+
+
+
+O tipo **int** permite armazenar números em variáveis e realizar operações com elas: adição, subtração, multiplicação, divisão, etc.:
+
+int x = 1;
+
+int y = x*2;
+
+int z = 5 * y * y + 2 * y + 3;
+
+é possivel juntar duas strings usando +:
+
+String s = "Amigo" + " é o melhor";
+
+int x = 333;
+
+String s = "Amigo" + x;
+
+(juntar strings e numeros sempre resultará em uma string, como "Amigo333" no exemplo acima)
+
+
+
+System.out.println = printa na linha e pula pra proxima
+
+System.out.print = printa na linha e a proxima coisa a ser printada, irá do lado da linha anterior.
+
+
+
+Um compilador Java não compila todas as classes em um programa de código de máquina. Em vez disso, ele compila cada classe de forma independente e, além disso, não converte em código de máquina, mas em um código intermediário especial (bytecode). O bytecode é compilado em código de máquina quando o programa é iniciado.
+
+comentário java /**/ ou //
+
+
+
+Um programa em Java consiste em classes. Cada classe é armazenada em um arquivo individual, cujo nome coincide com o nome da classe. A extensão do arquivo é ***java***
+
+
+
+Quando temos muitos arquivos de classes, agrupamos todos em pastas e subpastas. Além disso, as classes são agrupadas em pacotes e subpacotes. Os nomes dos pacotes e subpacotes devem ser indicados no código da classe e devem ser idênticos aos nomes das pastas e subpastas no disco.
+
+Dessa forma, temos de um lado os arquivos armazenados em pastas e, do outro, as classes armazenadas em pacotes. Um nome de classe também deve ter o mesmo nome do arquivo que descreve a classe. O nome do pacote é o mesmo nome da pasta onde a classe é armazenada.
+
+
+
+O valor de uma variável pode ser usado para calcular um novo valor que vai substituir o antigo.
+
+exemplo:
+
+a=5
+
+b=5
+
+a=a=+b
+
+o novo valor de a é 10.
+
+
+
+```java
+public class MinhaPrimeiraClasse
+{
+   public static void main(String[] args)
+   {
+      int a, b, c;
+      String s1, s2;
+      System.out.println("Digite dois números");
+      a = new Scanner(System.in).nextInt();
+      b = new Scanner(System.in).nextInt();
+      c = a + b;
+      System.out.println("A soma é " + c);
+   }
+}
+```
+

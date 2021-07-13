@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'checkstyle'
+    id 'pmd'
 }
 
 group 'on.innovation.digital'

@@ -1,0 +1,24 @@
+# Convenções de nome
+
+classes com nome composto a palavra sempre começa maiuscula, como StringBuilders
+
+
+
+nomes de métodos são sempre minusculos,se for composto só as proximas palavras começam com maiusculo, como verificaComFiltro.
+
+não é comum misturar letra com numero, assim como caracteres especiais.
+
+nomes de variaveis tambem começam com minusculo.
+
+plugins:
+
+chesckstyle gradle plugin, verifica pequenas checks de qualidade de código, pequenos detalhes
+
+pmd gradle plugin, faz analizes grandes, de bugs, de duplicidade, etc
+
+
+
+para instalar, faz checkout numa branch chamada codestyle, e em plugins, você adiciona id 'checkstyle' e id 'pmd', depois só fazer uma configuração para eles 
+
+![image-20210709144425592](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210709144425592.png)
+
