@@ -122,3 +122,218 @@ public class MinhaPrimeiraClasse
 }
 ```
 
+![image-20210713144922278](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210713144922278.png)
+
+![image-20210713145408584](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210713145408584.png)
+
+Variables are divided into two types: primitive types and reference types. Primitive types store values directly, while reference types store a reference to an object. Primitive types include int, char, boolean, and many others. Reference types include everything else. We use classes to create them.
+
+
+
+```java
+package com.codegym.task.task01.task0129;
+
+/* 
+Calculate the circumference of a circle
+
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        printCircleCircumference(5);
+        
+    }
+
+    public static void printCircleCircumference(int radius) {
+        double pi =3.14;
+        double c = 2*pi*radius;
+        System.out.println(c);
+    }
+}
+```
+
+```java
+
+```
+
+
+
+```java
+package com.codegym.task.task01.task0130;
+
+/* 
+Our first converter!
+
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        System.out.println(convertCelsiusToFahrenheit(41));
+    }
+
+    public static double convertCelsiusToFahrenheit(int celsius) {
+        double TC = celsius;
+        double TF = 9/5.0*TC+32;
+
+        return TF;
+    }
+}
+```
+```java
+package com.codegym.task.task02.task0202;
+
+/* 
+Where does a Person come from?
+
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        Person person = new Person();
+    }
+
+    public static class Person {
+        String name = "Maria";
+        int age =19;
+        int weight =70;
+        int money=10000;
+    }
+}
+```
+
+```java
+package com.codegym.task.task02.task0204;
+
+/* 
+Family relations
+
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        Man man = new Man();
+        Woman woman = new Woman();
+        woman.husband = man;
+        man.wife = woman;
+       
+       
+    }
+
+    public static class Man {
+        public int age;
+        public int height;
+        public Woman wife;
+
+    }
+
+    public static class Woman {
+        public int age;
+        public int height;
+        public Man husband;
+
+    }
+}
+```
+
+
+
+![image-20210713164043298](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210713164043298.png)
+
+![image-20210713164056983](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210713164056983.png)
+
+
+
+```java
+package com.codegym.task.task02.task0209;
+
+/* 
+Max, Bella, and Jack
+
+*/
+
+public class Solution {
+    public static void main(String[] args) {
+        Dog dog1 = new Dog();
+        dog1.name = "Max";
+
+        Dog dog2 = new Dog();
+        dog2.name = "Bella";
+        
+        Dog dog3 = new Dog();
+        dog3.name = "Jack";
+    }
+
+    public static class Dog {
+        public String name;
+    }
+}
+```
+
+```java
+┏
+┃public class Variables
+┃┏
+┃┃{
+┃┃   private static String TEXT = "The end.";
+┃┃  ┗━━━━━━━━━━━━━━┛
+┃┃   public static void main (String[] args)
+┃┃ ┏                         ┗━━━━━━━┛
+┃┃ ┃ {
+┃┃ ┃    System.out.println("Hi");
+┃┃ ┃    String s = "Hi!";
+┃┃ ┃  ┏┗━━━━┛
+┃┃ ┃  ┃ System.out.println(s);
+┃┃ ┃  ┃ if (args != NULL)
+┃┃ ┃  ┃ {
+┃┃ ┃  ┃    String s2 = s;
+┃┃ ┃  ┃   ┗━━━━┛
+┃┃ ┃  ┃  ┏
+┃┃ ┃  ┃  ┃ System.out.println(s2);
+┃┃ ┃  ┃  ┗
+┃┃ ┃  ┃ }
+┃┃ ┃  ┃ Variables variables = new Variables();
+┃┃ ┃  ┃ System.out.println(variables.instanceVariable);
+┃┃ ┃  ┃ System.out.println(TEXT);
+┃┃ ┃  ┗
+┃┃ ┃ }
+┃┃ ┗
+┃┃   public String instanceVariable;
+┃┃  ┗━━━━━━━━━━━━━━━┛
+┃┃   public Variables()
+┃┃   {
+┃┃      instanceVariable = "Instance variable test.";
+┃┃   }
+┃┃}
+┃┗
+┗
+```
+
+\1. A variable declared in a method exists (is visible) from the start of its declaration to the end of the method.
+
+\2. A variable declared in a code block exists until the end of the code block.
+
+\3. A method's parameters exist everywhere within the method.
+
+\4. Variables in an object exist during the entire lifespan of the object that contains them. Their visibility is also defined by special access modifiers: **public** and **private**.
+
+\5. Static (class) variables exist the whole time the program is running. Their visibility is also defined by access modifiers.
+
+
+
+
+
+\1. **public** access modifier.
+
+You can use a variable, method or class marked with the public modifier from anywhere in the program. This is the highest level of access – there are no limitations here.
+
+\2. **private** access modifier.
+
+You can use a variable or a method marked with the private modifier only from the class it is declared in. For all other classes, the marked method or variable will be invisible, just as if it doesn't exist. This is the highest level of closedness – access only within its own class.
+
+\3. No modifier.
+
+If a variable or a method isn't marked with any modifier, it is considered to be marked with a 'default' access modifier. Such variables and methods are visible to all classes in the package they are declared in. And to them only. This level of access is sometimes called '**package-private**' access, since access to the variables and methods is open for the entire package that contains their class.
+
+
+
+![image-20210713165731801](C:\Users\arian\AppData\Roaming\Typora\typora-user-images\image-20210713165731801.png)
