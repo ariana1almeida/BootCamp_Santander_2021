@@ -10,7 +10,8 @@ Aqui você irá encontrar minhas anotações e meus exercícios feitos durante a
 - Introdução ao Git e GitHub:green_book:
 - Estrutura de dados e Algoritmos:green_book:
 - Conceitos e melhores práticas com banco de dados PostgreSQL:green_book:
--  Desenvolvimento básico em Java:open_book:
+- Desenvolvimento básico em Java:green_book:
+- Desenvolvimento avançado em Java:open_book:
 
 
 
