@@ -1,0 +1,43 @@
+# CONSTRUTORES
+
+Podemos entender o termo construtor no sentido literal, afinal vamos construir um objeto.
+
+Por meio de um construtor, criamos um objeto baseado em uma Classe e assim o alocamos em memória.
+
+Ao criarmos um objeto dizemos que estamos instanciando um objeto.
+
+construir objetos = instanciar objetos
+
+para instanciar uma classe, é feito o seguinte:
+
+Pessoa pessoa = new Pessoa();
+
+Pessoa pessoa = new Pessoa("Marcos");
+
+O primeiro pessoa é tipo do objeto, declaração
+
+o segundo pessoa é o nome da variável, dentro dessa variável pode ser criado varios objetos
+
+o terceiro pessoa é o nome do objeto, seguido pelo valor dele, um parâmetro
+
+o new diz que de fato está sendo criado um objeto.
+
+
+
+Também é possível criar construtores parametrizados. Dessa forma, é possível definir um contrato onde sempre será obrigatório passar alguma informação na hora de instanciar a classe.
+
+
+
+Exercício final:
+
+Crie uma classe Carro com os atributos:
+
+-Marca: String
+
+-Modelo: String
+
+-Ano: Integer
+
+-Variante: String
+
+-Essa classe deve garantir que Modelo, Marca e Ano sempre sejam passados na hora de instanciar um objeto.
