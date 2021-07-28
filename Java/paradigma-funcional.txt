@@ -1,0 +1,110 @@
+# Paradigma Funcional no Java
+
+Programação funcional é o processo de construir software através de composição de funções puras, evitando compartilhamento de estados, dados mutáveis e efeitos colaterais. É declarativa ao invés de imperativa, essa é uma definição de Eric Elliott.
+
+Paradigma Imperativo: É aquele que expressa o código através de comandos ao computador, nele é possível ter controle de estado dos objetos:
+
+```java
+class Imperativo {
+    public static void main(String[] args) {
+        int valor = 10;
+        int resultado = valor * 3;
+        System.out.println("O resultado é: " + resultado);
+    }
+}
+```
+
+
+
+Paradigma funcional: damos uma regra, uma declaração de como queremos que o programa se comporte.
+
+```java
+class Funcional {
+    public static void main(String[] args) {
+        UnaryOperator<integer> calcularValorVezes3 = valor -> valor*3;
+        int valor = 10;
+        System.out.println("O resultado é : " + calcularValorVezes3.apply(10));
+    }
+}
+```
+
+
+
+###### Funções e imutabilidade em paradigma funcional:
+
+
+
+Conceitos fundamentais da programação funcional.
+
+**Composição de funções:** é criar uma nova função através da composição de outras. Por exemplo, vamos criar uma função que vai filtrar um array, filtrando somente os números pares e multiplicando por dois:
+
+```java
+public class Aula {
+    public static void main(String [] args){
+        
+        //funcional
+        int[] valores = {1,2,3,4};
+        Arrays.stream(valores)
+            .filter(numero -> numero % 2==0)
+            .map(numero -> numero * 2)
+            .forEach(numero -> System.out.println(numero));
+        
+        //imperativo
+       for(int i=0;i <valores.length; i++{
+           int valor = 0;
+           if(valores[i] % 2==0){
+               valores = valores[i] *2;
+               if(valor!= o){
+                   System.out.println(valor);
+               }
+               
+           }
+       }
+        
+        
+    }
+   
+```
+
+funcional e o imperativo entregam o mesmo, mas o funcional é mais facil de ser lido
+
+o filter pega todo numero que  o resto da divisao dele, dividido por 2 é igual a 0.
+
+o map entao pegar esses numeros e faz vezes 2
+
+e o forEach pega cada numero que foi feio o filter e o map e printa.
+
+Funções puras: é chamada de pura quando invocada mais de uma vez e produz o mesmo resultado
+
+```java
+class FuncoesPuras {
+    public static void main(String [] args) {
+        BiPredicate<Integer, Integer> verificarSeEMaior = (parametro, valorComparacao) -> parametro > valorComparacao;
+        
+        System.out.println(verificarSeEMaior.test(13,12));
+        System.out.println(verificarSeEMaior.test(13,12));
+    }
+}
+```
+
+
+
+Imutabilidade: Significa que uma vez que uma variável que recebeu um valor, vai possuir esse valor para sempre, ou quando criamos um objeto ele não pode ser modificado.
+
+```java
+class Imutabilidade {
+    public static void main(String [] args) {
+        int valor = 20;
+        UnaryOperator<Integer> retornarDobro = v -> v*2;
+        System.out.println(retornarDobro.apply(valor)); //retorna o dobro do valor
+        System.out.println(valor); //valor nao sera alterado
+     
+    }
+}
+```
+
+imperativo x declarativo
+
+é muito comum aprender a programar de forma imperativa, onde mandamos alguém fazer algo. Busque o usuário 15 no banco de dados. Valide essas informações do usuário.
+
+Na programação funcional tentamos programar de forma declarativa, onde declaramos o que desejamos, sem explicitar como será feito. Qual o usuário 15? Quais os erros dessas informações?
