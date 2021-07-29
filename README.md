@@ -11,7 +11,8 @@ Aqui você irá encontrar minhas anotações e meus exercícios feitos durante a
 - Estrutura de dados e Algoritmos:green_book:
 - Conceitos e melhores práticas com banco de dados PostgreSQL:green_book:
 - Desenvolvimento básico em Java:green_book:
-- Desenvolvimento avançado em Java:open_book:
+- Desenvolvimento avançado em Java:green_book:
+- I​m​p​l​e​m​en​t​a​n​do​ ​C​o​l​l​e​c​ti​o​n​s​ ​e​ ​S​t​r​e​a​ms com Java:open_book:
 
 
 
@@ -19,7 +20,7 @@ Aqui você irá encontrar minhas anotações e meus exercícios feitos durante a
 
 Email: arianaleu@hotmail.com :email:
 
-LinkedIn: https://www.linkedin.com/in/ariana-quadros-de-almeida-b32453198/ :computer:
+LinkedIn: https://www.linkedin.com/in/arianaqalmeida
 
 
 
